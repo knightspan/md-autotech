@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-display: "Barlow Condensed", ui-sans-serif, system-ui, sans-serif;
+}
+
+:root,
+[data-theme="dark"] {
+  --bg: #0e0e0e;
+  --bg-elevated: #181818;
+  --bg-deep: #050505;
+  --bg-topbar: #0a0a0a;
+  --text: #ffffff;
+  --text-muted: #a1a1aa;
+  --text-soft: #d4d4d8;
+  --border: #27272a;
+  --border-strong: #3f3f46;
+  --header-solid: #121212;
+  --accent: #FFCC00;
+  --surface-overlay: rgba(0, 0, 0, 0.6);
+}
+
+[data-theme="light"] {
+  --bg: #f0f0f2;
+  --bg-elevated: #ffffff;
+  --bg-deep: #e8e8ec;
+  --bg-topbar: #1a1a1a;
+  --text: #141416;
+  --text-muted: #52525b;
+  --text-soft: #3f3f46;
+  --border: #d4d4d8;
+  --border-strong: #a1a1aa;
+  --header-solid: #ffffff;
+  --accent: #d4a800;
+  --surface-overlay: rgba(255, 255, 255, 0.75);
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Theme-aware surface helpers */
+.theme-page {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.theme-surface {
+  background: var(--bg-elevated);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.theme-deep {
+  background: var(--bg-deep);
+  color: var(--text);
+}
+
+.theme-border {
+  border-color: var(--border);
+}
+
+.theme-muted {
+  color: var(--text-muted);
+}
+
+.theme-soft {
+  color: var(--text-soft);
+}
+
+.theme-header-solid {
+  background: var(--header-solid);
+  border-color: var(--border);
+  color: var(--text);
+}
+
+/* Light mode: soften hard-coded dark panels inside main content */
+[data-theme="light"] #home-view .bg-\[\#181818\],
+[data-theme="light"] #home-view .bg-\[\#121212\],
+[data-theme="light"] main .bg-\[\#181818\],
+[data-theme="light"] main .bg-\[\#121212\] {
+  background-color: var(--bg-elevated) !important;
+  color: var(--text);
+}
+
+[data-theme="light"] #home-view .bg-black,
+[data-theme="light"] main .bg-black\/60,
+[data-theme="light"] main .bg-black {
+  background-color: var(--bg-deep) !important;
+}
+
+[data-theme="light"] #home-view .border-zinc-800,
+[data-theme="light"] #home-view .border-zinc-900,
+[data-theme="light"] #home-view .border-zinc-700,
+[data-theme="light"] main .border-zinc-800,
+[data-theme="light"] main .border-zinc-900,
+[data-theme="light"] main .border-zinc-700 {
+  border-color: var(--border) !important;
+}
+
+[data-theme="light"] #home-view .text-white,
+[data-theme="light"] main .text-white {
+  color: var(--text) !important;
+}
+
+[data-theme="light"] #home-view .text-zinc-300,
+[data-theme="light"] #home-view .text-zinc-400,
+[data-theme="light"] main .text-zinc-300,
+[data-theme="light"] main .text-zinc-400 {
+  color: var(--text-muted) !important;
+}
+
+[data-theme="light"] #home-view .bg-zinc-900,
+[data-theme="light"] main .bg-zinc-900 {
+  background-color: #ececf0 !important;
+}
+
+/* logo2.png is already white-on-black — do not invert */
+#brand-logo img,
+#app-footer .dark-logo {
+  filter: none;
+}
+
+/* Hero stays cinematic in both themes */
+#hero-video-banner .text-white {
+  color: #ffffff !important;
+}
+
+#hero-video-banner .text-zinc-200,
+#hero-video-banner .text-zinc-400 {
+  color: #e4e4e7 !important;
+}
+
+.custom-scroller::-webkit-scrollbar {
+  width: 5px;
+}
+.custom-scroller::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scroller::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3);
+  border-radius: 4px;
+}
+.custom-scroller::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5);
+}

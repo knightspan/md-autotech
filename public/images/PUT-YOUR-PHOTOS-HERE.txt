@@ -1,0 +1,34 @@
+MD AUTOTECH — WHERE TO PUT REAL PHOTOS / LOGO / VIDEO
+=====================================================
+
+BRAND LOGO
+  File:  public/images/brand/logo-md-autotech.png
+  Also used from: public/logo-md-autotech.png  (header + footer)
+  Code:  src/components/Header.tsx
+         src/components/Footer.tsx
+
+HERO VIDEO (homepage background)
+  File:  public/videos/hlins-expanding-our-legacy.mp4
+  Code:  src/components/HeroVideoBanner.tsx  →  HERO_VIDEO_SRC
+
+HERO POSTER (image shown before video loads)
+  File:  public/images/hero/hero-poster.jpg
+  Code:  src/components/HeroVideoBanner.tsx  →  poster="..."
+
+PRODUCT PHOTOS (catalog + homepage slideshow)
+  Folder: public/images/products/
+  Code:   src/data.ts  →  each product's imageUrl field
+
+  Exact filenames expected:
+    md-mono-x1.jpg
+    md-dual-tourer.jpg
+    md-front-usd43.jpg
+    md-active-street.jpg
+    md-seals-kit.jpg
+    md-billet-swingarm.jpg
+    md-sprocket-grip.jpg
+    md-brake-carbonv.jpg
+
+  After you drop a photo in, open src/data.ts and change that product's
+  imageUrl from the Unsplash URL to e.g.:
+    imageUrl: '/images/products/md-mono-x1.jpg',

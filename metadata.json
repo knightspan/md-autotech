@@ -1,0 +1,6 @@
+{
+  "name": "MD AutoTech",
+  "description": "Premium industrial catalog, interactive physics simulation suspension tuning lab, nationwide distributor network, and dynamic bulk proforma quote builder for MD AutoTech.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
